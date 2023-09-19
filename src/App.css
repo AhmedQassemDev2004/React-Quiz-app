@@ -1,0 +1,20 @@
+:root {
+  --yellow:#FFC436;
+  --primary-color:#191D88;
+  --primary-light:#1450A3;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Comfortaa', cursive;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover{
+  background-color: var(--primary-light);
+}

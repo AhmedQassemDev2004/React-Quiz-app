@@ -1,0 +1,20 @@
+.get-started {
+    height:100vh;
+    background-color: var(--yellow);
+    color:var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-started .head {
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.get-started .btn {
+    font-size:20px;
+    font-weight: 600;
+    padding: 10px 20px;
+}
