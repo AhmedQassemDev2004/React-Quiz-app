@@ -2,7 +2,7 @@ import React, {ReactElement, useEffect, useState} from "react";
 import "./quiz-page.css"
 import {Container} from "react-bootstrap";
 import Timer from "../../components/Timer.tsx";
-import loadQuestions, {QuestionType} from "../../hooks/loadQuestions.ts";
+import loadQuestions, {QuestionType} from "../../api/loadQuestions.ts";
 import Question from "../../components/Question.tsx";
 import Results from "../../components/Results.tsx";
 import {PuffLoader} from "react-spinners";

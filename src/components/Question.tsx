@@ -1,4 +1,4 @@
-import {QuestionType} from "../hooks/loadQuestions.ts";
+import {QuestionType} from "../api/loadQuestions.ts";
 import {Badge, Button} from "react-bootstrap";
 import React from "react";
 
