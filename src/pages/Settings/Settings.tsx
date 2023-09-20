@@ -63,7 +63,7 @@ export default function Settings():ReactElement {
                     <Form.Select name={'type'} onChange={onChange} >
                         <option selected value={'multiple'}>Multiple</option>
                         <option value={'boolean'}>True or false</option>
-                        <option>Both</option>
+                        <option value={''}>Both</option>
                     </Form.Select>
                 </Form.Group>
             </Form>
