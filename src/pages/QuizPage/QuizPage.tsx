@@ -9,20 +9,20 @@ import {PuffLoader} from "react-spinners";
 
 export type selectedAnswerType = 'correct' | 'incorrect'
 
-export default function QuizPage():ReactElement {
+export default function QuizPage({settings}):ReactElement {
     const [questions,setQuestions] = useState<QuestionType[]>([]);
     const [selectedAnswers,setSelectedAnswers] = useState<selectedAnswerType[]>([]);
     const [index,setIndex] = useState(0);
     const [finished,setFinished] = useState(false);
 
+    console.log(settings)
     useEffect(()=>{
-        console.log("USE EFFECT RUNS")
-        loadQuestions().then((res)=>setQuestions(res));
+        loadQuestions(settings).then((res)=>setQuestions(res));
     },[]);
 
 
     function next() {
-        if(index == 9) {
+        if(index == settings.amount - 1) {
             finish();
         } else {
             setIndex(i=>++i);
@@ -30,6 +30,7 @@ export default function QuizPage():ReactElement {
     }
 
     function onSelect(e:React.MouseEvent<HTMLButtonElement>) {
+        // @ts-ignore
         setSelectedAnswers(answers=> [...answers,e.target.id]);
         next();
     }
@@ -44,7 +45,7 @@ export default function QuizPage():ReactElement {
         setFinished(false);
         setIndex(0);
         setSelectedAnswers([]);
-        setQuestions(await loadQuestions());
+        setQuestions(await loadQuestions(settings));
     }
 
     if(!questions || questions.length == 0) {
@@ -60,10 +61,10 @@ export default function QuizPage():ReactElement {
             <Container className={'d-flex flex-column justify-content-center align-items-center'}>
                 {!finished &&
                     <>
-                        <Timer restart={restart}/>
+                        <Timer restart={restart} initialMin={Math.floor(settings.amount / 2)}/>
                         <Question question={questions[index]} onSelect={onSelect} />
                         <div className={'q-index'}>
-                            {index + 1 } / 10
+                            {index + 1 } / {settings.amount}
                         </div>
                     </>
                 }

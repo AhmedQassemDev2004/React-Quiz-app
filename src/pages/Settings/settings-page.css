@@ -1,0 +1,27 @@
+.settings-page {
+    height:100vh;
+    background-color: var(--yellow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.settings-page .settings {
+    padding: 20px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.settings-page .settings .group {
+    color:var(--primary-color);
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+}

@@ -1,9 +1,8 @@
 import {ReactElement, useEffect, useState} from "react";
 
-const INIT_MINUTES = 5;
 
-export default function Timer({restart}:{restart:()=>void}):ReactElement {
-    const [min,setMin] = useState(INIT_MINUTES);
+export default function Timer({restart,initialMin}:{restart:()=>void,initialMin:number}):ReactElement {
+    const [min,setMin] = useState(initialMin);
     const [sec,setSec] = useState(0);
 
     useEffect(()=>{

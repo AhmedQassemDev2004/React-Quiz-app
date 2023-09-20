@@ -43,3 +43,52 @@
     font-size: 30px;
     color:var(--primary-color);
 }
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.results button {
+    width: fit-content;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.result {
+    background-color: #191D88;
+    font-size: 100px;
+    color:white;
+    padding: 20px;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-text {
+    /*color: var(--primary-color);*/
+    color:white;
+    font-weight: bold;
+    font-size: 60px;
+    padding: 10px 20px;
+    text-align:center;
+    border-radius: 5px;
+}
+
+.result.good {
+    background-color: var(--bs-success)
+}
+
+.result.bad {
+    background-color: var(--bs-danger);
+}
+
+.result.excellent {
+    background-color: var(--bs-success);
+}

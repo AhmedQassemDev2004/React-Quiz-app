@@ -3,13 +3,17 @@ import './App.css'
 
 import GetStarted from "./pages/GetStarted/GetStarted.tsx";
 import {useState} from "react";
-import QuizPage from "./pages/QuizPage/QuizPage.tsx";
+import Settings from "./pages/Settings/Settings.tsx";
 
 function App() {
   const [started,setStarted] = useState<boolean>(false);
 
+  if(!started) {
+    return <GetStarted setStarted={setStarted} />
+  }
+
   return (
-      !started ? <GetStarted setStarted={setStarted}/> : <QuizPage/>
+      <Settings />
   )
 }
 
